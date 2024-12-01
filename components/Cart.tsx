@@ -1,45 +1,94 @@
 "use client";
-import { ShoppingBag, Trash2, X } from "lucide-react";
+import { useCart } from "@/hooks/use-cart";
+import { Trash2, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Cart() {
+  const { open, setOpen, total } = useCart();
   return (
-    <div className="fixed right-0 top-0 z-50 h-[746px] w-[417px] bg-white shadow-md">
-      <div className="p-8">
-        <div className="flex items-center justify-between">
-          <h2 className="pb-4 font-poppins text-2xl font-semibold text-black">
-            Shopping Card
-          </h2>
-          <ShoppingBag />
+    open && (
+      <div className="fixed right-0 top-0 z-50 max-h-[746px] w-[417px] bg-white shadow-md">
+        <div className="p-8 pb-0">
+          <div className="flex items-center justify-between pb-4">
+            <h2 className="font-poppins text-2xl font-semibold text-black">
+              Shopping Card
+            </h2>
+            <X
+              className="size-7 cursor-pointer font-bold transition-colors duration-200 hover:text-red-600"
+              onClick={() => setOpen(false)}
+            />
+          </div>
+          <hr />
+          <div className="max-h-[500px] overflow-auto">
+            <CartItem />
+          </div>
+          <div className="m-5 flex items-center justify-between gap-3">
+            <h2 className="font-poppins text-base text-black">Subtotal</h2>
+            <span className="font-poppins text-base font-semibold text-primary">
+              {total}
+            </span>
+          </div>
         </div>
         <hr />
-        <CartItem />
+        <div className="flex items-center justify-between gap-2 p-8">
+          <Link
+            href={"/cart"}
+            className="rounded-3xl border border-black px-5 py-2 text-black transition-colors duration-200 hover:border-primary hover:bg-secondary hover:text-primary"
+          >
+            Cart
+          </Link>
+          <Link
+            href={"/checkout"}
+            className="rounded-3xl border border-black px-5 py-2 text-black transition-colors duration-200 hover:border-primary hover:bg-secondary hover:text-primary"
+          >
+            Checkout
+          </Link>
+          <Link
+            href={"/comparison"}
+            className="rounded-3xl border border-black px-5 py-2 text-black transition-colors duration-200 hover:border-primary hover:bg-secondary hover:text-primary"
+          >
+            Comparison
+          </Link>
+        </div>
       </div>
-      <hr />
-      <div className="p-8">
-        <button>Cart</button>
-        <button>Checkout</button>
-        <button>Comparison</button>
-      </div>
-    </div>
+    )
   );
 }
 
 function CartItem() {
+  const { cart, removeFromCart } = useCart();
   return (
-    <div className="my-2">
-      <div className="m-5 flex items-center justify-between">
-        <Image className="h-[105px] w-[108px] rounded-md" src={""} alt={""} />
-        <div>
-          <h3>{"c.title"}</h3>
-          <div className="flex items-center gap-2">
-            <span>{"c.quantity"}</span>
-            <X />
-            <p>{"c.price"}</p>
+    <div className="my-5">
+      {cart.length === 0 ? (
+        <h3 className="text-center font-poppins text-xl font-medium text-[#9F9F9F]">
+          Your cart is empty
+        </h3>
+      ) : (
+        cart.map((item) => (
+          <div key={item.id} className="m-5 flex items-center justify-between">
+            <Image
+              className="h-[105px] w-[108px] rounded-md"
+              src={item.image}
+              alt={item.title}
+            />
+            <div className="flex flex-col gap-2">
+              <h3 className="font-poppins text-base">{item.title}</h3>
+              <div className="flex items-center gap-2">
+                <span className="text-xs">{item.quantity}</span>
+                <X className="size-4 text-[#9F9F9F]" />
+                <p className="font-poppins text-sm font-medium text-primary">
+                  {item.price}
+                </p>
+              </div>
+            </div>
+            <Trash2
+              className="size-5 cursor-pointer transition-colors duration-200 hover:text-red-600"
+              onClick={() => removeFromCart(item.id)}
+            />
           </div>
-        </div>
-        <Trash2 />
-      </div>
+        ))
+      )}
     </div>
   );
 }

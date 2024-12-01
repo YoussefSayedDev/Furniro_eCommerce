@@ -1,8 +1,7 @@
 import shopImage from "@/assets/shop-image.png";
-import ProductItem from "@/components/ProductItem";
+import Products from "@/components/Products";
 import Trophy from "@/components/Trophy";
 import { items as itemsProduct } from "@/constants/product-items";
-import { ProductItemType } from "@/types/products-items-type";
 import { Columns2, Grip, SlidersHorizontal } from "lucide-react";
 import Image from "next/image";
 
@@ -62,17 +61,7 @@ export default function Shop() {
       </div>
       <div className="container mx-auto px-8">
         <div className="grid grid-cols-1 justify-items-center gap-5 pt-16 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {itemsProduct.map((i: ProductItemType, index) => (
-            <ProductItem
-              key={index}
-              title={i.title}
-              price={i.price}
-              description={i.description}
-              image={i.image}
-              priceBeforeDiscount={i.priceBeforeDiscount}
-              newItem={i.newItem}
-            />
-          ))}
+          <Products itemsProduct={itemsProduct} />
         </div>
         <div className="mx-auto my-20 flex w-fit items-center gap-5">
           {[1, 2, 3].map((i) => (

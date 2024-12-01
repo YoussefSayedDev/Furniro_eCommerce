@@ -1,5 +1,6 @@
 import ProductDetails from "@/components/ProductDetails";
-import ProductItem from "@/components/ProductItem";
+// import ProductItem from "@/components/ProductItem";
+import Products from "@/components/Products";
 import { items } from "@/constants/product-items";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
@@ -100,29 +101,7 @@ export default async function SingleProduct({
           Related Products
         </h1>
         <div className="container mx-auto grid grid-cols-1 justify-items-center gap-5 px-8 py-10 lg:grid-cols-3 xl:grid-cols-4">
-          {items.map((item, index) => {
-            const {
-              description,
-              image,
-              price,
-              title,
-              newItem,
-              priceBeforeDiscount,
-            } = item;
-            if (index < 4)
-              return (
-                <ProductItem
-                  id={item.id}
-                  key={item.id}
-                  description={description}
-                  image={image}
-                  price={price}
-                  title={title}
-                  priceBeforeDiscount={priceBeforeDiscount}
-                  newItem={newItem}
-                />
-              );
-          })}
+          <Products itemsProduct={items} limit={4} />
         </div>
         <div className="flex justify-center pt-10">
           <button className="h-[48px] w-[245px] cursor-pointer border border-primary text-center font-poppins text-base font-semibold leading-relaxed text-primary transition-colors duration-300 hover:bg-primary hover:text-white">

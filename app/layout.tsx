@@ -1,7 +1,7 @@
 import Cart from "@/components/Cart";
 import Header from "@/components/header/Header";
 import Footer from "@/containers/Footer";
-import { CartProvider } from "@/contexts/CartContext";
+import { CartContextProvider } from "@/contexts/CartContext";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -16,15 +16,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <CartProvider>
-      <html lang="en">
-        <body className="relative overflow-x-hidden">
+    <html lang="en">
+      <body className="relative overflow-x-hidden">
+        <CartContextProvider>
           <Header />
           <Cart />
           {children}
           <Footer />
-        </body>
-      </html>
-    </CartProvider>
+        </CartContextProvider>
+      </body>
+    </html>
   );
 }

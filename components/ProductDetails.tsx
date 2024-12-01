@@ -1,4 +1,5 @@
 "use client";
+import { useCart } from "@/hooks/use-cart";
 import { ProductItemType } from "@/types/products-items-type";
 import { formatPrice } from "@/utils/helper";
 import {
@@ -19,6 +20,8 @@ export default function ProductDetails({
   product: ProductItemType;
 }) {
   const [image, setImage] = useState(product.image);
+
+  const { addToCart } = useCart();
   return (
     <>
       <div className="flex gap-5">
@@ -91,7 +94,10 @@ export default function ProductDetails({
             <span>1</span>
             <Plus className="size-5 cursor-pointer" />
           </div>
-          <button className="font-semibol flex items-center gap-2 rounded-md border border-black px-6 py-4 font-poppins text-base transition-colors duration-200 hover:border-transparent hover:bg-primary hover:text-white">
+          <button
+            onClick={() => addToCart({ ...product, quantity: 1 })}
+            className="font-semibol flex items-center gap-2 rounded-md border border-black px-6 py-4 font-poppins text-base transition-colors duration-200 hover:border-transparent hover:bg-primary hover:text-white"
+          >
             Add To Card
           </button>
           <button className="flex items-center gap-2 rounded-md border border-black px-6 py-4 font-poppins text-base transition-colors duration-200 hover:border-transparent hover:bg-primary hover:text-white">

@@ -1,9 +1,11 @@
+"use client";
 import ProductItem from "@/components/ProductItem";
 import { items as itemsProduct } from "@/constants/product-items";
+import { useCart } from "@/hooks/use-cart";
 import { ProductItemType } from "@/types/products-items-type";
 
 export default function Products() {
-  console.log("Products rendering!");
+  const { addToCart } = useCart();
   return (
     <section className="container mx-auto px-8 py-16">
       <div className="text-center">
@@ -22,6 +24,7 @@ export default function Products() {
                 image={i.image}
                 priceBeforeDiscount={i.priceBeforeDiscount}
                 newItem={i.newItem}
+                addToCart={addToCart}
               />
             ),
         )}
