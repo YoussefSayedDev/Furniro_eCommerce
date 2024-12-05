@@ -1,4 +1,4 @@
-import Cart from "@/components/Cart";
+import Cart from "@/components/Cart/Cart";
 import Header from "@/components/header/Header";
 import Footer from "@/containers/Footer";
 import { CartContextProvider } from "@/contexts/CartContext";

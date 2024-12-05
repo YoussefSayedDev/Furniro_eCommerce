@@ -55,7 +55,14 @@ export default function Footer() {
         <hr />
         <div>
           <p className="mb-12 mt-5 text-center font-poppins text-base lg:text-start">
-            {new Date().getFullYear()} furino. All rights reverved
+            {new Date().getFullYear()} Furino. Powered by{" "}
+            <a
+              href="https://youssef-el-sayed.vercel.app"
+              className="font-semibold text-blue-600 hover:text-blue-800"
+            >
+              Youssef El Sayed
+            </a>
+            . All rights reserved.
           </p>
         </div>
       </div>

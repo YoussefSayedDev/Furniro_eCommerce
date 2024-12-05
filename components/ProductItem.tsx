@@ -46,41 +46,45 @@ const ProductItem = memo(
     return (
       <div className="group relative cursor-pointer overflow-hidden rounded-md">
         {/* Image Section */}
-        <div className="relative">
-          <Image src={image} alt={title} width={285} height={301} />
-          {(newItem || priceBeforeDiscount > price) && (
-            <div className="absolute right-5 top-5 z-10 flex gap-2 font-poppins text-xs font-semibold text-white">
-              {newItem && (
-                <span className="flex size-10 items-center justify-center rounded-full bg-[#2EC1AC] shadow-md">
-                  New
-                </span>
-              )}
+        <Link href={`/shop/${id}`}>
+          <div className="relative">
+            <Image src={image} alt={title} width={285} height={301} />
+            {(newItem || priceBeforeDiscount > price) && (
+              <div className="absolute right-5 top-5 z-10 flex gap-2 font-poppins text-xs font-semibold text-white">
+                {newItem && (
+                  <span className="flex size-10 items-center justify-center rounded-full bg-[#2EC1AC] shadow-md">
+                    New
+                  </span>
+                )}
+                {priceBeforeDiscount > price && (
+                  <span className="flex size-10 items-center justify-center rounded-full bg-[#E97171] shadow-md">
+                    -{theDiscount}%
+                  </span>
+                )}
+              </div>
+            )}
+          </div>
+        </Link>
+
+        {/* Product Details */}
+        <Link href={`/shop/${id}`}>
+          <div className="flex flex-col gap-1 bg-bgSecondary p-4">
+            <h1 className="font-poppins text-2xl font-semibold">{title}</h1>
+            <p className="font-poppins text-base font-medium text-[#898989]">
+              {description}
+            </p>
+            <div className="flex justify-between gap-2">
+              <h2 className="font-poppins text-xl font-semibold">
+                {formatPrice(price, "en-US", "USD")}
+              </h2>
               {priceBeforeDiscount > price && (
-                <span className="flex size-10 items-center justify-center rounded-full bg-[#E97171] shadow-md">
-                  -{theDiscount}%
+                <span className="text-gray-500 line-through">
+                  {formatPrice(priceBeforeDiscount, "en-US", "USD")}
                 </span>
               )}
             </div>
-          )}
-        </div>
-
-        {/* Product Details */}
-        <div className="flex flex-col gap-1 bg-bgSecondary p-4">
-          <h1 className="font-poppins text-2xl font-semibold">{title}</h1>
-          <p className="font-poppins text-base font-medium text-[#898989]">
-            {description}
-          </p>
-          <div className="flex justify-between gap-2">
-            <h2 className="font-poppins text-xl font-semibold">
-              {formatPrice(price, "en-US", "USD")}
-            </h2>
-            {priceBeforeDiscount > price && (
-              <span className="text-gray-500 line-through">
-                {formatPrice(priceBeforeDiscount, "en-US", "USD")}
-              </span>
-            )}
           </div>
-        </div>
+        </Link>
 
         {/* Hover Actions */}
         <div className="absolute bottom-0 left-0 right-0 z-20 flex h-0 flex-col items-center justify-center bg-[#3a3a3ab6] transition-all duration-500 group-hover:h-full">

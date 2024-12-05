@@ -88,19 +88,19 @@ export default function ProductDetails({
             <span className="size-5 cursor-pointer rounded-full bg-[#B88E2F]"></span>
           </div>
         </div>
-        <div className="flex items-center gap-5">
-          <div className="flex items-center gap-5 rounded-md border border-[#9F9F9F] px-6 py-4">
+        <div className="flex flex-col items-center gap-5 md:flex-row">
+          <div className="flex min-w-[160px] items-center justify-between gap-5 rounded-md border border-[#9F9F9F] px-6 py-4">
             <Minus className="size-5 cursor-pointer" />
             <span>1</span>
             <Plus className="size-5 cursor-pointer" />
           </div>
           <button
             onClick={() => addToCart({ ...product, quantity: 1 })}
-            className="font-semibol flex items-center gap-2 rounded-md border border-black px-6 py-4 font-poppins text-base transition-colors duration-200 hover:border-transparent hover:bg-primary hover:text-white"
+            className="font-semibol flex min-w-[160px] items-center gap-2 rounded-md border border-black px-6 py-4 font-poppins text-base transition-colors duration-200 hover:border-transparent hover:bg-primary hover:text-white"
           >
-            Add To Card
+            Add To Cart
           </button>
-          <button className="flex items-center gap-2 rounded-md border border-black px-6 py-4 font-poppins text-base transition-colors duration-200 hover:border-transparent hover:bg-primary hover:text-white">
+          <button className="flex min-w-[160px] items-center gap-2 rounded-md border border-black px-6 py-4 font-poppins text-base transition-colors duration-200 hover:border-transparent hover:bg-primary hover:text-white">
             {" "}
             <Plus className="size-5" /> <span>Compare</span>
           </button>
