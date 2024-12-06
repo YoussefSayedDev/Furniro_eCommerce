@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Furniro E-Commerce
 
-## Getting Started
+**Furniro E-Commerce** is a modern e-commerce platform built with Next.js and Tailwind CSS. The website allows users to browse and purchase furniture items with a sleek and responsive design.
 
-First, run the development server:
+## Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+You can try the live demo of the project here: [Furniro E-Commerce Demo](https://furniro-e-commerce-five.vercel.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Responsive Design**: Fully optimized for both desktop and mobile devices.
+- **Lucide Icons**: High-quality icons for an improved user interface.
+- **Tailwind CSS**: Fast and flexible utility-first CSS framework for styling.
+- **Next.js**: A robust React framework for fast and SEO-friendly static and server-rendered pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technologies Used
 
-## Learn More
+- **Next.js**: React-based framework for building the web application.
+- **React**: JavaScript library for building user interfaces.
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI design.
+- **Lucide React**: Set of high-quality icons for React.
+- **TypeScript**: A statically typed superset of JavaScript.
+- **ESLint & Prettier**: Code linting and formatting for better code quality.
 
-To learn more about Next.js, take a look at the following resources:
+## Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To run this project locally, follow these steps:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone the repository:
 
-## Deploy on Vercel
+   ```bash
+    git clone https://github.com/your-username/furniro-ecommerce.git
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Navigate to the project directory:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+    cd furniro-ecommerce
+   ```
+
+3. Install the dependencies:
+
+   ```bash
+    npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+    npm run dev
+   ```
+
+5. Open your browser and navigate to `http://localhost:3000`.
