@@ -37,7 +37,7 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <h3 className="mb-14 font-poppins text-base font-medium text-[#9F9F9F]">
+            <h3 className="mb-14 font-poppins text-xs font-medium text-[#9F9F9F] md:text-sm">
               Newsletter
             </h3>
             <div className="flex gap-5">
@@ -46,7 +46,7 @@ export default function Footer() {
                 type="text"
                 placeholder="Enter Your Email Address"
               />
-              <button className="relative overflow-hidden border-b-2 border-black font-poppins text-sm font-medium uppercase transition-colors duration-300 hover:text-primary">
+              <button className="relative overflow-hidden border-b-2 border-black font-poppins text-xs font-medium uppercase transition-colors duration-300 hover:text-primary md:text-sm">
                 subscribe
               </button>
             </div>

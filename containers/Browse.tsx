@@ -7,7 +7,9 @@ export default function Browse() {
   return (
     <section className="container mx-auto px-8 py-16">
       <div className="text-center">
-        <h1 className="font-poppins text-[32px] font-bold">Browse The Range</h1>
+        <h1 className="font-poppins text-2xl font-bold md:text-[32px]">
+          Browse The Range
+        </h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
       <div className="grid grid-cols-1 justify-items-center gap-5 pt-16 md:grid-cols-2 lg:grid-cols-3">

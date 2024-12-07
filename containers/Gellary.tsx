@@ -15,8 +15,10 @@ export default function Gellary() {
   return (
     <section className="pb-[50px] pt-[70px]">
       <div className="pb-5 text-center font-poppins">
-        <p className="text-xl font-semibold">Share your setup with</p>
-        <h1 className="text-[40px] font-bold">#FuniroFurniture</h1>
+        <p className="mb-2 text-base font-semibold md:text-xl md:font-medium">
+          Share your setup with
+        </p>
+        <h1 className="text-2xl font-bold md:text-[40px]">#FuniroFurniture</h1>
       </div>
       <div className="flex flex-col items-center gap-5 md:flex-row">
         <div className="flex flex-col gap-5">

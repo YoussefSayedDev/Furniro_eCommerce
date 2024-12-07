@@ -8,10 +8,10 @@ export default function Cart() {
   const { open, setOpen, total } = useCart();
   return (
     open && (
-      <div className="fixed right-0 top-0 z-50 max-h-[746px] w-[417px] bg-white shadow-md">
+      <div className="fixed right-0 top-0 z-50 max-h-[746px] w-[300px] bg-white shadow-md md:w-[417px]">
         <div className="p-8 pb-0">
           <div className="flex items-center justify-between pb-4">
-            <h2 className="font-poppins text-2xl font-semibold text-black">
+            <h2 className="font-poppins text-lg font-semibold text-black md:text-2xl">
               Shopping Card
             </h2>
             <X
@@ -31,22 +31,22 @@ export default function Cart() {
           </div>
         </div>
         <hr />
-        <div className="flex items-center justify-between gap-2 p-8">
+        <div className="flex flex-wrap items-center justify-center gap-2 p-8 md:justify-between">
           <Link
             href={"/cart"}
-            className="rounded-3xl border border-black px-5 py-2 text-black transition-colors duration-200 hover:border-primary hover:bg-secondary hover:text-primary"
+            className="rounded-3xl border border-black px-5 py-2 text-base text-black transition-colors duration-200 hover:border-primary hover:bg-secondary hover:text-primary md:text-xl"
           >
             Cart
           </Link>
           <Link
             href={"/checkout"}
-            className="rounded-3xl border border-black px-5 py-2 text-black transition-colors duration-200 hover:border-primary hover:bg-secondary hover:text-primary"
+            className="rounded-3xl border border-black px-5 py-2 text-base text-black transition-colors duration-200 hover:border-primary hover:bg-secondary hover:text-primary md:text-xl"
           >
             Checkout
           </Link>
           <Link
             href={"/comparison"}
-            className="rounded-3xl border border-black px-5 py-2 text-black transition-colors duration-200 hover:border-primary hover:bg-secondary hover:text-primary"
+            className="rounded-3xl border border-black px-5 py-2 text-base text-black transition-colors duration-200 hover:border-primary hover:bg-secondary hover:text-primary md:text-xl"
           >
             Comparison
           </Link>
@@ -61,7 +61,7 @@ function CartItem() {
   return (
     <div className="my-5">
       {cart.length === 0 ? (
-        <h3 className="text-center font-poppins text-xl font-medium text-[#9F9F9F]">
+        <h3 className="text-center font-poppins text-base font-medium text-[#9F9F9F] md:text-xl">
           Your cart is empty
         </h3>
       ) : (
