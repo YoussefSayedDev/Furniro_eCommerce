@@ -12,8 +12,8 @@ export const links = [
     icon: ShoppingBag,
   },
   {
-    title: "About",
-    url: "/about",
+    title: "Blog",
+    url: "/blog",
     icon: Info,
   },
   {

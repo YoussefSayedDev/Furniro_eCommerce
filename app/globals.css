@@ -145,3 +145,7 @@ body {
 .active-slide {
   @apply bg-primary after:absolute after:left-1/2 after:top-1/2 after:size-7 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:border after:border-primary after:content-[''];
 }
+
+.readmore {
+  @apply after:absolute after:-bottom-1 after:left-1/2 after:h-[1px] after:w-[50px] after:-translate-x-1/2 after:bg-black after:transition-all after:duration-200 after:content-[''] after:hover:w-full after:hover:bg-primary;
+}
