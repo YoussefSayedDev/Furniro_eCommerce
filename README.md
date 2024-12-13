@@ -29,7 +29,7 @@ To run this project locally, follow these steps:
 1. Clone the repository:
 
    ```bash
-    git clone https://github.com/your-username/furniro-ecommerce.git
+    git clone git@github.com:YoussefSayedDev/Furniro_eCommerce.git
    ```
 
 2. Navigate to the project directory:
