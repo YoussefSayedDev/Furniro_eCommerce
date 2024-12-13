@@ -8,7 +8,7 @@ export default function Cart() {
   const { open, setOpen, total } = useCart();
   return (
     open && (
-      <div className="fixed right-0 top-0 z-50 max-h-[746px] w-[300px] bg-white shadow-md md:w-[417px]">
+      <div className="fixed right-0 top-0 z-50 max-h-[746px] w-[300px] bg-white shadow-md md:w-[460px]">
         <div className="p-8 pb-0">
           <div className="flex items-center justify-between pb-4">
             <h2 className="font-poppins text-lg font-semibold text-black md:text-2xl">
@@ -31,7 +31,7 @@ export default function Cart() {
           </div>
         </div>
         <hr />
-        <div className="flex flex-wrap items-center justify-center gap-2 p-8 md:justify-between">
+        <div className="flex flex-wrap items-center justify-center gap-2 p-8 md:flex-nowrap md:justify-between">
           <Link
             href={"/cart"}
             className="rounded-3xl border border-black px-5 py-2 text-base text-black transition-colors duration-200 hover:border-primary hover:bg-secondary hover:text-primary md:text-xl"
