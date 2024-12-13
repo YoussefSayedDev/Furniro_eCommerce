@@ -6,12 +6,11 @@ import {
   ClockIcon,
   MapPinCheckInside,
   Phone,
-  Search,
 } from "lucide-react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 
-export default function Blog() {
+export default function Contact() {
   return (
     <main className="overflow-hidden">
       <div className="relative w-full">
@@ -170,30 +169,5 @@ export default function Blog() {
       </div>
       <Trophy />
     </main>
-  );
-}
-
-function RecentPost({
-  image,
-  title,
-  date,
-}: {
-  image: string | StaticImageData;
-  title: string;
-  date: string;
-}) {
-  return (
-    <div className="flex items-center justify-between gap-2">
-      <div className="flex items-center gap-2">
-        <Image src={image} alt="blog image" width={80} height={80} />
-        <div className="flex flex-col gap-2">
-          <h3 className="font-poppins text-base font-semibold text-[#9F9F9F]">
-            {title}
-          </h3>
-          <p className="font-poppins text-xs text-[#9F9F9F]">{date}</p>
-        </div>
-      </div>
-      <span className="font-poppins text-base font-semibold text-[#9F9F9F]"></span>
-    </div>
   );
 }
