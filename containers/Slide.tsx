@@ -1,4 +1,4 @@
-import Slider from "@/components/Slider";
+import SliderImages from "@/components/SliderImages";
 
 export default function Slide() {
   return (
@@ -12,12 +12,12 @@ export default function Slide() {
             Our designer already made a lot of beautiful prototipe of rooms that
             inspire you
           </p>
-          <button className="hover:bg-btnHover mb-5 mt-[25px] flex h-[48px] w-[176px] items-center justify-center bg-primary font-poppins text-base font-semibold text-white transition-colors duration-300">
+          <button className="mb-5 mt-[25px] flex h-[48px] w-[176px] items-center justify-center bg-primary font-poppins text-base font-semibold text-white transition-colors duration-300 hover:bg-btnHover">
             Explore More
           </button>
         </div>
         <div className="relative hidden h-[582px] w-[1196px] overflow-hidden md:block">
-          <Slider />
+          <SliderImages />
         </div>
       </div>
     </section>
