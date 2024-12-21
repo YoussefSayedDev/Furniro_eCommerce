@@ -7,6 +7,7 @@ import {
   useEffect,
   useState,
 } from "react";
+import { toast } from "react-toastify";
 
 interface CartContextType {
   cart: CartItemType[];
@@ -38,11 +39,26 @@ export const CartContextProvider = ({ children }: { children: ReactNode }) => {
         return [...prevCart, item];
       }
     });
+    toast.success(
+      <div className="font-poppins font-bold">
+        Added <span className="text-lg text-primary">{item.title}</span> to cart
+      </div>,
+    );
   }, []);
 
   const removeFromCart = (id: string | number) => {
     const items = cart.filter((c) => c.id !== id);
+    const removedItem = cart.find((c) => c.id === id);
     setCart(items);
+    if (removedItem)
+      toast.info(
+        <div className="font-poppins font-bold text-red-400">
+          Removed{" "}
+          <span className="text-lg text-primary">{removedItem?.quantity}</span>{" "}
+          of <span className="text-lg text-primary">{removedItem?.title}</span>{" "}
+          from cart
+        </div>,
+      );
   };
 
   const updateCart = (updatedCart: CartItemType[]) => {
