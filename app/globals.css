@@ -149,3 +149,36 @@ body {
 .readmore {
   @apply after:absolute after:-bottom-1 after:left-1/2 after:h-[1px] after:w-[50px] after:-translate-x-1/2 after:bg-black after:transition-all after:duration-200 after:content-[''] after:hover:w-full after:hover:bg-primary;
 }
+
+.PhoneInputInput {
+  outline: none;
+}
+
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid #9f9f9f;
+  border-radius: 50%;
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+input[type="radio"]:checked {
+  background-color: black;
+}
+
+input[type="radio"]:checked::after {
+  content: "";
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
