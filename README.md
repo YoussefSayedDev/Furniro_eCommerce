@@ -4,7 +4,7 @@
 
 ## Demo
 
-You can try the live demo of the project here: [Furniro E-Commerce Demo](https://furniro-e-commerce-five.vercel.app/)
+You can try the live demo of the project here: [Furniro E-Commerce Demo]([https://furniro-e-commerce-five.vercel.app/](https://furniro-e-commerce-youssefs-projects-de5ca2de.vercel.app/))
 
 ## Features
 
