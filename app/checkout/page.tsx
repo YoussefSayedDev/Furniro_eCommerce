@@ -7,7 +7,7 @@ import Link from "next/link";
 
 import logoImage from "@/assets/logo.png";
 
-import CheckoutInputs from "@/components/CheckoutInputs";
+// import CheckoutInputs from "@/components/CheckoutInputs";
 import CheckoutProducts from "@/components/CheckoutProducts";
 
 export default function CheckoutPage() {
@@ -56,7 +56,7 @@ export default function CheckoutPage() {
           <h2 className="font-poppins text-xl font-semibold text-black md:text-[36px]">
             Billing details
           </h2>
-          <CheckoutInputs />
+          {/* <CheckoutInputs /> */}
         </div>
         <div className="flex-1">
           <CheckoutProducts />
